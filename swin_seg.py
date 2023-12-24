@@ -88,7 +88,7 @@ class Swinv2_backbone(nn.Module):
         # 创建 Swin Transformer 模型，并加载预训练权重
         self.swin = timm.create_model('swinv2_base_window8_256.ms_in1k', pretrained=False)
 
-        # 提取 Swin Transformer 的前三层
+        # 提取 Swin Transformer 
         self.pe = self.swin.patch_embed
         self.layer1 = self.swin.layers[0]
         self.layer2 = self.swin.layers[1]
